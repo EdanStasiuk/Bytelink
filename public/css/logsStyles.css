@@ -1,0 +1,37 @@
+table.user-logs {
+    margin-left: 20%;
+    width: 60%;
+    border-spacing: 3px;
+}
+
+table.clicks-table {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+table, th, td {
+    border-radius: 5px;
+}
+
+.user-logs th {
+    width: 25%;
+    background-color: rgba(159, 206, 247, 0.888);
+}
+
+.clicks-table th {
+    width: 5%;
+    background-color: rgba(159, 206, 247, 0.888);
+}
+
+td {
+    text-align: center;
+    background-color: rgba(211, 234, 255, 0.888);
+}
+
+tr {
+    height: 50px;
+}
+
+h1 {
+    margin-left: 8%;
+}

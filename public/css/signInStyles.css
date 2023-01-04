@@ -1,0 +1,93 @@
+@font-face {
+    font-family: Bison-Bold;
+    src: url('Bison-Bold.ttf');
+}
+
+#input-form {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+}
+
+input[type=url-code] {   
+    font-size: 22px;
+    font-weight: 500;
+    width: 80%;
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid #000000;
+    box-sizing: border-box;   
+    border-radius: 12px;
+    outline: none;
+}
+
+.blur {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+}
+
+button:hover {   
+    opacity: 0.7;
+}
+
+/* Width for this function might be an issue */
+button {   
+    background-color: rgb(255, 255, 255);   
+    width: 100%;  
+    color: rgb(0, 0, 0);   
+    padding: 15px;   
+    margin: 10px 0px;   
+    border: none;   
+    cursor: pointer;   
+}
+
+form {   
+    padding: 20px;
+    margin: auto;
+} 
+
+input[type=username-email], input[type=password] {   
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid #ffffff;
+    box-sizing: border-box;   
+    border-radius: 12px;
+    outline: none;
+}
+
+.loginbtn {
+    border-radius: 12px;
+}
+
+.cancelbtn {   
+    width: auto;   
+    padding: 10px 18px;  
+    margin: 10px 5px;
+    border-radius: 12px;
+}         
+       
+.container { 
+    border-radius: 25px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+    width: 550px; 
+    background-color: rgba(141, 199, 237, 0.888);  
+    text-align: center;
+}

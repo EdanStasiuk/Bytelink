@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/indexStyles.css" rel="stylesheet">
+        <link href="./css/globalStyles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Bytelink IP Grabber and URL Shortener</title>
+    </head>
+    <body>
+        <div id="navbar"> 
+            <a href="./index.html" id="logo">Bytelink</a>
+            <div id="navbar-right" >
+                <a href="./index.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="./termsOfUse.html">Terms of Use</a>
+                <a href="./signIn.html">Sign In</a>
+                <a href="#">Register</a>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div id="input-form">
+            <form class="long-url-form">
+                <label>Create or Track URLs</label>
+                <br>
+                <input class="user-input" type="url" placeholder="Enter a valid URL or tracking code..." name="url-input" required onkeydown="checkModel(event)">
+            </form>
+        </div>
+        <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">This action requires your consent</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>I agree with the <a href="./termsOfUse.html">Terms of Use</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="footer-container">
+                            <button id="agree" class="submit-form" type="button"  class="modal-button" data-dismiss="modal">I Agree</button>
+                            <button id="cancel" type="button" onclick="document.getElementById('modal').style.display='none'" class="modal-button" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="overlay">
+            <div id="popup">
+                <div class="container">
+                    <form>  
+                        <label>Username or Email:</label>
+                        <input type="username-email" placeholder="Username or Email" name="usernameOrEmail" required>
+                        <label>Password:</label>
+                        <input type="password" placeholder="Password" name="password" required>
+                        <button type="submit" class="loginbtn">Login</button>   
+                        <input type="checkbox" checked="checked"> Remember me   
+                        <button type="button" class="cancelbtn" onclick="javascript:myBlurFunction(0);"> Cancel</button>
+                        <br> Forgot <a href="#"> password? </a>
+                    </form> 
+                </div> 
+            </div>
+        </div> -->
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/funcs.js"></script>
+    <script type="module" src="./js/index.js"></script>
+</html>

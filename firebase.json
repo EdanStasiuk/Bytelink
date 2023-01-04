@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "site": "bytelink-ip",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ]
+  }
+}

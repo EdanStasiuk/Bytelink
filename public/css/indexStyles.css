@@ -1,0 +1,137 @@
+@font-face {
+    font-family: Bison-Bold;
+    src: url('Bison-Bold.ttf');
+}
+
+#input-form {
+    font-size: 25px;
+    font-weight: 300px;
+    text-align: center;
+}
+
+input[type=url] {   
+    font-size: 22px;
+    font-weight: 500;
+    width: 80%;
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid #000000;
+    box-sizing: border-box;   
+    border-radius: 12px;
+    outline: none;
+}
+
+button:hover {   
+    opacity: 0.7;
+}
+
+button {   
+    background-color: rgb(255, 255, 255);   
+    color: rgb(0, 0, 0);   
+    padding: 15px;   
+    margin: 10px 0px;   
+    border: none;   
+    cursor: pointer;   
+}
+
+form {   
+    padding: 20px;
+    margin: auto;
+}
+
+.loginbtn {
+    border-radius: 12px;
+}
+
+/* Bootstrap modal styling */
+.modal-title {
+    font-size: 23px;
+    font-weight: 300px;
+    text-align: center;
+}
+
+.modal-body {
+    font-size: 20px;
+    font-weight: 150px;
+    text-align: center;
+}
+
+.modal-button:hover {   
+    opacity: 0.7;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+#agree {
+    font-size: 16px;
+    display: inline-block;
+    width: 30%;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0px;
+    cursor: pointer;
+    background-color: rgba(141, 199, 237, 0.888);   
+    color: rgb(0, 0, 0);   
+}
+
+#cancel {
+    font-size: 16px;
+    display: inline-block;
+    width: 30%;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0px;
+    cursor: pointer;
+    background-color: rgba(209, 209, 209, 0.888);   
+    color: rgb(0, 0, 0);   
+}
+
+/* Don't need if going with bootstrap modal */
+/* input[type=username-email], input[type=password] {   
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid #ffffff;
+    box-sizing: border-box;   
+    border-radius: 12px;
+    outline: none;
+} */
+
+/* .blur {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+} */
+
+/* .cancelbtn {   
+    width: auto;   
+    padding: 10px 18px;  
+    margin: 10px 5px;
+    border-radius: 12px;
+}
+
+.container {
+    border-radius: 25px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+    width: 550px; 
+    background-color: rgba(141, 199, 237, 0.888);  
+    text-align: center;
+} */

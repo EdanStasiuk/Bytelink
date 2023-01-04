@@ -1,0 +1,6 @@
+{
+    "main": "firebase.js",
+    "scripts": {
+        "start": "firebase serve --port 3000"
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/logsStyles.css" rel="stylesheet">
+        <link href="./css/globalStyles.css" rel="stylesheet">
+        <title>Bytelink IP Grabber and URL Shortener</title>
+    </head>
+    <body class="logs">
+        <div id="navbar"> 
+            <a href="./index.html" id="logo">Bytelink</a>
+            <div id="navbar-right">
+                <a href="./index.html"> Home </a>
+                <a href="#"> About </a>
+                <a href="#"> Contact </a>
+                <a href="#./termsOfUse.html"> Terms of Use </a>
+                <a href="./signIn.html"> Sign In </a>
+                <a href="#"> Register </a>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <table class="user-logs">
+            <tr>
+                <th>Original URL</th>
+                <td id="long-url"></td>
+            </tr>
+            <tr>
+                <th>New URL</th>
+                <td id="short-url"></td>
+            </tr>
+            <tr>
+                <th>Tracking Code</th>
+                <td id="tracking-code"></td>
+            </tr>
+            <tr>
+                <th>Access Link</th>
+                <td id="access-link"></td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>Please <a href="./signIn.html">login</a> or <a href="./register.html">register</a> to create a note</td>
+            </tr>
+        </table> 
+        <br><br>
+        <div id="results">
+            <h1>Results:</h1>
+            <table class="clicks-table">
+                <thead>
+                    <th>Data/Time</th>
+                    <th>IP Address</th>
+                    <th>Location</th>
+                    <th>User Agent</th>
+                    <th>Referring URL</th>
+                    <th>Host Name</th>
+                    <th>ISP</th>
+                </thead>
+
+                <tbody id="tbody1">
+                     
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+    <script type="text/javascript" src="./js/funcs.js"></script>
+    <script type="module" src="./js/logs.js"></script>
+</html>
