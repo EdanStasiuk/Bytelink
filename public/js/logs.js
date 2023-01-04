@@ -27,7 +27,7 @@ querySnapshot1.forEach((doc) => {
 
     // Insert info from firestore to logs table
     document.getElementById("long-url").innerHTML = doc.data().long_url;
-    document.getElementById("short-url").innerHTML = "https://bytelink-ip.web.app/redirect.html?" + doc.data().short_code;
+    document.getElementById("short-url").innerHTML = "http://localhost:3000/redirect.html?" + doc.data().short_code;
     document.getElementById("tracking-code").innerHTML = doc.data().tracking_code;
     document.getElementById("access-link").innerHTML = window.location.href;
 

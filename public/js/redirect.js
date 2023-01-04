@@ -67,7 +67,7 @@ async function storeIP(data) {
   * Gets all local IP related info to be displayed
   *   and uses storeIP(data) to store in Firestore
   */
-document.onload = function getIP() {
+window.onload = function getIP() {
     var url = "https://ipgeolocation.abstractapi.com/v1/?api_key=02372566092b494db1e1497863293b02";
 
     fetch(url)
