@@ -8,4 +8,5 @@ Bytelink is an IP grabber and URL shortener that is hosted on Firebase at https:
 4. Create Sign In and Register pages
 5. Cosmetic work
       - Bootstrap css stylesheet is causing navbar to shift on the homepage
+      - Mobile UI and UX need attention
 6. Add a privacy policy
