@@ -3,7 +3,7 @@ window.onscroll = function() { scrollFunction() };
 
 function scrollFunction()
 {
-  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) //small navbar
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) // small navbar
   {
     document.getElementById("navbar").style.padding = "10px 10px";
     document.getElementById("logo").style.fontSize = "45px";
