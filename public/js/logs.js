@@ -19,7 +19,7 @@ querySnapshot1.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     console.log(doc.id, " => ", doc.data());
 
-    /* Switch short-url to localhost for testing;
+    /* NOTE: Switch short-url to localhost for testing;
      *  had to hardcode the url because the browser treats the resultant url 
      *  as insecure for some reason. */
     // https://bytelink-ip.web.app/redirect.html?
@@ -39,10 +39,10 @@ var docID = localStorage.getItem('docID');
 const querySnapshot2 = await getDocs(collection(db, "urls", docID, "clicks"));
 querySnapshot2.forEach((doc) => {
     addItemToTable(doc.data().city, doc.data().region, doc.data().country, doc.data().flag, 
-        doc.data().continent, doc.data().ipAddress, doc.data().isp, doc.data().time);
+        doc.data().continent, doc.data().ipAddress, doc.data().isp, doc.data().time, doc.data().date);
 })
 
-function addItemToTable(city, region, country, flag, continent, ipAddress, isp, time) {
+function addItemToTable(city, region, country, flag, continent, ipAddress, isp, time, date) {
     
     // Create variables for elements of new row
     var trow = document.createElement('tr');
@@ -55,13 +55,13 @@ function addItemToTable(city, region, country, flag, continent, ipAddress, isp, 
     var td7 = document.createElement('td');
 
     // Assign values to variables
-    td1.innerHTML = time;
+    td1.innerHTML = date + " " + time;
     td2.innerHTML = ipAddress;
     td3.innerHTML = city + ", " + region + ", " + country + " " + flag + ", " + continent;
-    td4.innerHTML = "temp undefined";
-    td5.innerHTML = "temp undefined";
-    td6.innerHTML = "temp undefined";
-    td6.innerHTML = "temp undefined";
+    td4.innerHTML = "N/A";
+    td5.innerHTML = "N/A";
+    td6.innerHTML = "N/A";
+    td6.innerHTML = "N/A";
     td7.innerHTML = isp;
 
     // Append row to table body in logs.html

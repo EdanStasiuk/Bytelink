@@ -7,7 +7,8 @@ import { collection,
     } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
 /**
- * Used for printing the IP address; for testing
+ * Used for printing the IP address in testing.
+ * @param {JSON file containing IP related information} data 
  */
 function printIP(data) {
     // Find ip-address key-value pair 
@@ -30,19 +31,21 @@ function getParam() {
 }
 
 /**
- * Stores all relevant IP information in Firestore
+ * Stores all relevant IP information in Firestore;
+ * @param {JSON file containing IP related information} data 
+ * @param {The current date on which the window was loaded} displayDate 
  */
-async function storeIP(data) {
+async function storeIP(data, displayDate) {
 
     // Create a reference to the urls collection
     const urlsRef = collection(db, "urls");
 
     // Create a query against the collection
     const q = query(urlsRef, where("short_code", "==", getParam()));
-
+  
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-        
+
         // Add doc to clicks collection
         addDoc(collection(db, "urls", doc.id, "clicks"), {
         ipAddress: data.ip_address,
@@ -52,11 +55,12 @@ async function storeIP(data) {
         continent: data.continent,
         flag: data.flag.emoji,
         time: data.timezone.current_time,
+        date: displayDate,
         isp: data.connection.isp_name
         });
 
-        console.log("Document written with ID: ", doc.id);
-        console.log(doc.id, " => ", doc.data());
+        // console.log("Document written with ID: ", doc.id);
+        // console.log(doc.id, " => ", doc.data());
         setTimeout(() => { // Need this otherwise the data grab is inconsistent; page changes too quickly I'm guessing
             window.location.href = doc.data().long_url;
         }, 1000);
@@ -68,7 +72,14 @@ async function storeIP(data) {
   *   and uses storeIP(data) to store in Firestore
   */
 window.onload = function getIP() {
+    
     var url = "https://ipgeolocation.abstractapi.com/v1/?api_key=02372566092b494db1e1497863293b02";
+
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1;
+    const year = currentDate.getFullYear();
+    const displayDate = day + "/" + month + "/" + year;
 
     fetch(url)
     // Get the JSON data
@@ -76,5 +87,5 @@ window.onload = function getIP() {
     // Use the JSON data
     // .then(data => printIP(data))
     // Store relevant data
-    .then(data => storeIP(data));
+    .then(data => storeIP(data, displayDate));
 }
