@@ -1,0 +1,28 @@
+h1 {
+    font-size: 19px;
+    font-weight: 325;
+}
+
+h2 {
+    font-size: 16px;
+    margin-left: 60px;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 16px;
+    margin-left: 100px;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 16px;
+    margin-left: 130px;
+    font-weight: 300;
+}
+
+.legal {
+    font-family:"Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
+}
