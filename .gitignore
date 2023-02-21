@@ -3,6 +3,6 @@
 
 .vscode/c_cpp_properties.json
 
-.public/js/firebase.js
+public/js/firebase.js
 
-.public/firebase-debug.log
+firebase-debug.log
