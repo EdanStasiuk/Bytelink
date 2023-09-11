@@ -1,5 +1,6 @@
 # Bytelink
-Bytelink is an IP grabber and URL shortener that is hosted on Firebase at https://bytelink-ip.web.app.
+Bytelink is an IP grabber and URL shortener that is hosted on Firebase at https://bytelink-ip-grabber.web.app.  
+*NOTE: Bytelink—for the time being—has been removed from Firebase's hosting by the creator.*
 
 ## To Do:
 1. Add other specs of the clicker's computer on redirect (as already listed in the logs table)
