@@ -34,7 +34,7 @@ if (submit !== undefined && submit !== null) {
         if (inputType === 'url') {
 
             // Generate tracking code and save it to local storage
-            const trackingCode = rand_str_without_O0();
+            var trackingCode = rand_str_without_O0();
             localStorage.setItem('trackingCode', trackingCode);
 
             // Check whether the tracking code already exists and generate a new one if so
