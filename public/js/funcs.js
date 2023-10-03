@@ -1,8 +1,7 @@
 // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 window.onscroll = function() { scrollFunction() };
 
-function scrollFunction()
-{
+function scrollFunction() {
   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) //small navbar
   {
     document.getElementById("navbar").style.padding = "10px 10px";
@@ -22,8 +21,7 @@ function scrollFunction()
  * Checks if string is a tracking code
  * Returns a bool
  */
-function isValidTrackingCode(string)
-{
+function isValidTrackingCode(string) {
   const list = "ABCDEFGHIJKLMNPQRSTUVWXYZ123456789";
   
   if (string.length != 6)
@@ -43,11 +41,34 @@ function isValidTrackingCode(string)
 }
 
 /**
+ * TODO: Get this working, logically the function is fine, issue is with script types in index.html
+ * Not urgent, no real risk of breaking the app but would be better with this implemented
+ */
+/**
+ * Checks if string is a tracking code
+ * Returns a bool
+ * Queries database to see if the string exists instead of just checking the format
+ */
+// async function isValidTrackingCode(trackingCode) {
+//   const ref = collection(db, "urls");
+//   const q = query(ref, where("tracking_code", "==", trackingCode));
+  
+//   const querySnapshot = await getDocs(q);
+//   if (querySnapshot.empty) {
+//     alert("Sorry, this is not a valid tracking code!");
+//     return false;
+//   }
+
+//   else {
+//     return true;
+//   }
+// }
+
+/**
  * Checks if string is a valid URL
  * Returns a bool
  */
-function isValidUrl(string)
-{
+function isValidUrl(string) {
   let url;
   try {
     url = new URL(string);
@@ -63,7 +84,7 @@ function isValidUrl(string)
  * If user enters URL, then update firestore 'urls' collection
  * else if user enters tracking code, then get info from firestore
  * 
- * Redirects to ./logs.html
+ * Page is then redirected to ./logs.html
  */
 function checkModel(event) {
   // User enters valid input
@@ -88,27 +109,11 @@ function checkModel(event) {
       return false;
   }
   // User enters invalid input
-  else if ((event.keyCode === 13) == true && 
+  else if ((event.keyCode === 13) && 
   ((isValidUrl(document.querySelector('.user-input').value) && 
   isValidTrackingCode(document.querySelector('.user-input').value)) == false))
   {
-    // TO DO: Add a bubble to show user what input is required of them, like "requires a valid url"
     alert("Enter a valid URL or tracking code");
     event.preventDefault();
   }
 }
-
-var myBlurFunction = function(state)
-{
-  /* state can be 1 or 0 */
-  var containerElement = document.getElementById('main-container');
-  var overlayEle = document.getElementById('overlay');
-
-  if (state) {
-      overlayEle.style.display = 'block';
-      containerElement.setAttribute('class', 'blur');
-  } else {
-      overlayEle.style.display = 'none';
-      containerElement.setAttribute('class', null);
-  }
-};

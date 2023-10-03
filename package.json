@@ -1,6 +1,13 @@
 {
-    "main": "firebase.js",
-    "scripts": {
-        "start": "firebase serve --port 3000"
-    }
+  "main": "firebase.js",
+  "scripts": {
+    "start": "firebase serve --port 3000"
+  },
+  "name": "bytelink",
+  "description": "Bytelink is an IP grabber and URL shortener that is hosted on Firebase at https://bytelink-ipg.web.app.",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "Edan Stasiuk",
+  "license": "MIT"
 }

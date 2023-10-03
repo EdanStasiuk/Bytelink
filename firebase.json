@@ -1,10 +1,18 @@
 {
-  "hosting": {
-    "site": "bytelink-ip",
+  "hosting": [{
+    "site": "bytelink-ip-grabber",
     "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*"
     ]
-  }
+  },
+  {
+    "site": "bytelink-ipg",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ]
+  }]
 }

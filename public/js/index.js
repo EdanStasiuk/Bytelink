@@ -37,8 +37,43 @@ if (submit !== undefined && submit !== null) {
             const trackingCode = rand_str_without_O0();
             localStorage.setItem('trackingCode', trackingCode);
 
+            // Check whether the tracking code already exists and generate a new one if so
+            var cont = true;
+            while (cont) {
+                var ref = collection(db, "urls");
+                var q = query(ref, where("tracking_code", "==", trackingCode));
+                
+                var querySnapshot = await getDocs(q);
+                if (querySnapshot.empty) {
+                    // console.log(querySnapshot.empty);
+                    cont = false;
+                }
+
+                else {
+                    trackingCode = rand_str_without_O0();
+                    localStorage.setItem('trackingCode', trackingCode);
+                }
+            }
+
             // Generate a second code
-            const shortCode = rand_str_without_O0();
+            var shortCode = rand_str_without_O0();
+
+            // Check whether the short code already exists and generate a new one if so
+            cont = true;
+            while (cont) {
+                var ref = collection(db, "urls");
+                var q = query(ref, where("short_code", "==", shortCode));
+                
+                var querySnapshot = await getDocs(q);
+                if (querySnapshot.empty) {
+                    // console.log(querySnapshot.empty);
+                    cont = false;
+                }
+
+                else {
+                    shortCode = rand_str_without_O0();
+                }
+            }
 
             // Add doc to urls collection
             const docRef = await addDoc(collection(db, "urls"), {

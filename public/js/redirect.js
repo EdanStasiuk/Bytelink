@@ -48,15 +48,15 @@ async function storeIP(data, displayDate) {
 
         // Add doc to clicks collection
         addDoc(collection(db, "urls", doc.id, "clicks"), {
-        ipAddress: data.ip_address,
-        city: data.city,
-        region: data.region_iso_code,
-        country: data.country,
-        continent: data.continent,
-        flag: data.flag.emoji,
-        time: data.timezone.current_time,
-        date: displayDate,
-        isp: data.connection.isp_name
+            ipAddress: data.ip_address,
+            city: data.city,
+            region: data.region_iso_code,
+            country: data.country,
+            continent: data.continent,
+            flag: data.flag.emoji,
+            time: data.timezone.current_time,
+            date: displayDate,
+            isp: data.connection.isp_name
         });
 
         // console.log("Document written with ID: ", doc.id);

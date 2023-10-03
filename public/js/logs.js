@@ -22,12 +22,12 @@ querySnapshot1.forEach((doc) => {
     /* NOTE: Switch short-url to localhost for testing;
      *  had to hardcode the url because the browser treats the resultant url 
      *  as insecure for some reason. */
-    // https://bytelink-ip.web.app/redirect.html?
+    // https://bytelink-ipg.web.app/redirect.html?
     // http://localhost:3000/redirect.html?
 
     // Insert info from firestore to logs table
     document.getElementById("long-url").innerHTML = doc.data().long_url;
-    document.getElementById("short-url").innerHTML = "https://bytelink-ip.web.app/redirect.html?" + doc.data().short_code;
+    document.getElementById("short-url").innerHTML = "https://bytelink-ipg.web.app/redirect.html?" + doc.data().short_code;
     document.getElementById("tracking-code").innerHTML = doc.data().tracking_code;
     document.getElementById("access-link").innerHTML = window.location.href;
 
