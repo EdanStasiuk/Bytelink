@@ -1,5 +1,7 @@
 table.user-logs {
+    margin-top: 270px;
     margin-left: 20%;
+    margin-bottom: 70px;
     width: 60%;
     border-spacing: 3px;
 }
@@ -16,6 +18,10 @@ table, th, td {
 .user-logs th {
     width: 25%;
     background-color: rgba(159, 206, 247, 0.888);
+}
+
+#results {
+    margin-bottom: 80px;
 }
 
 .clicks-table th {

@@ -43,34 +43,27 @@ querySnapshot2.forEach((doc) => {
 })
 
 function addItemToTable(city, region, country, flag, continent, ipAddress, isp, time, date) {
-    
-    // Create variables for elements of new row
+    // Create a new row element
     var trow = document.createElement('tr');
-    var td1 = document.createElement('td');
-    var td2 = document.createElement('td');
-    var td3 = document.createElement('td');
-    var td4 = document.createElement('td');
-    var td5 = document.createElement('td');
-    var td6 = document.createElement('td');
-    var td7 = document.createElement('td');
 
-    // Assign values to variables
-    td1.innerHTML = date + " " + time;
-    td2.innerHTML = ipAddress;
-    td3.innerHTML = city + ", " + region + ", " + country + " " + flag + ", " + continent;
-    td4.innerHTML = "N/A";
-    td5.innerHTML = "N/A";
-    td6.innerHTML = "N/A";
-    td6.innerHTML = "N/A";
-    td7.innerHTML = isp;
+    // Define an array of cell values
+    var cellValues = [
+        date + " " + time,
+        ipAddress,
+        city + ", " + region + ", " + country + " " + flag + ", " + continent,
+        "N/A",
+        "N/A",
+        "N/A",
+        isp
+    ];
 
-    // Append row to table body in logs.html
-    trow.appendChild(td1);
-    trow.appendChild(td2);
-    trow.appendChild(td3);
-    trow.appendChild(td4);
-    trow.appendChild(td5);
-    trow.appendChild(td6);
-    trow.appendChild(td7);
+    // Create and append cell elements to the row
+    for (var i = 0; i < cellValues.length; i++) {
+        var td = document.createElement('td');
+        td.innerHTML = cellValues[i];
+        trow.appendChild(td);
+    }
+
+    // Append the row to the table body in logs.html
     document.getElementById('tbody1').appendChild(trow);
 }
