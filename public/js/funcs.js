@@ -1,4 +1,7 @@
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+/**
+ * When the user scrolls down 80px from the top of the document,
+ *   resize the navbar's padding and the logo's font size.
+ */
 window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
@@ -24,6 +27,8 @@ function scrollFunction() {
 function isValidTrackingCode(string) {
   const list = "ABCDEFGHIJKLMNPQRSTUVWXYZ123456789";
   
+  string = string.trim(); // remove white space surrounding string
+
   if (string.length != 6)
   {
     return false;
@@ -49,7 +54,7 @@ function isValidTrackingCode(string) {
  * Returns a bool
  * Queries database to see if the string exists instead of just checking the format
  */
-// async function isValidTrackingCode(trackingCode) {
+// async function trackingCodeInDb(trackingCode) {
 //   const ref = collection(db, "urls");
 //   const q = query(ref, where("tracking_code", "==", trackingCode));
   
@@ -69,24 +74,18 @@ function isValidTrackingCode(string) {
  * Returns a bool
  */
 function isValidUrl(string) {
-  let url;
-  try {
-    url = new URL(string);
-  } catch (_) {
-    return false;
-  }
-
-  return url.protocol === "http:" || url.protocol === "https:" || url.protocol === "ftp://";
+  try { return Boolean(new URL(string)); }
+  catch(e) { return false; }
 }
 
 /**
- * Check if user enters a valid input, opens model if so.
+ * Check if user enters a valid input, opens modal if so.
  * If user enters URL, then update firestore 'urls' collection
  * else if user enters tracking code, then get info from firestore
  * 
  * Page is then redirected to ./logs.html
  */
-function checkModel(event) {
+function checkModal(event) {
   // User enters valid input
   if (event.keyCode === 13 && 
     (isValidUrl(document.querySelector('.user-input').value) || 
@@ -106,14 +105,23 @@ function checkModel(event) {
       
       event.preventDefault();
       $('#modal').modal();
-      return false;
+      return true;
   }
+  
   // User enters invalid input
   else if ((event.keyCode === 13) && 
   ((isValidUrl(document.querySelector('.user-input').value) && 
-  isValidTrackingCode(document.querySelector('.user-input').value)) == false))
-  {
+  isValidTrackingCode(document.querySelector('.user-input').value)) == false)) {
     alert("Enter a valid URL or tracking code");
     event.preventDefault();
+    return false;
   }
+
+  return undefined;
 }
+
+module.exports = {
+  isValidTrackingCode,
+  isValidUrl,
+  checkModal,
+};

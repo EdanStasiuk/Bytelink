@@ -23,7 +23,7 @@ function printIP(data) {
  *  to redirect to the target website
  */
 function getParam() {
-    const urlString = window.location.href; 
+    const urlString = window.location.href;
     let paramString = urlString.split("?");
     console.log("param is: " + paramString[1]);
     

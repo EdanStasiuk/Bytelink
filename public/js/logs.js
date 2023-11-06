@@ -43,10 +43,8 @@ querySnapshot2.forEach((doc) => {
 })
 
 function addItemToTable(city, region, country, flag, continent, ipAddress, isp, time, date) {
-    // Create a new row element
     var trow = document.createElement('tr');
 
-    // Define an array of cell values
     var cellValues = [
         date + " " + time,
         ipAddress,
